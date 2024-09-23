@@ -1,0 +1,64 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styling the body */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: #f0f0f0;
+}
+
+/* Styling the container holding the table */
+div {
+    padding: 20px;
+    width: 80%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+/* Styling table header */
+th {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+}
+
+/* Styling table rows */
+td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+/* Adding alternate row colors */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+td {
+    text-align: center;
+}
+
+tr:hover {
+    background-color: #e0e0e0;
+}
+
+td:empty {
+    background-color: #fafafa;
+}

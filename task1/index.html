@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 1</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <!-- Babel CDN for JSX support -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      function App() {
+        const [tableContent, setTableContent] = React.useState([
+          "Onboarding Call",
+          "Google Search Console Access",
+          "Google Analytics Access",
+          "Website Access",
+          "Technical Audit",
+          "Anchor Text/ URL Mapping",
+          "Google Data Studio Report + Local Reporting Suits",
+          "Site Level Optimization",
+          "On Page Optimization",
+          "Content Creation",
+          "Content Publishing",
+          "Premium Press Release",
+          "Authority Niche Placements",
+          "Review Management",
+          "Index Links",
+          "Video Recap",
+        ]);
+
+        const months = [
+          "Task",
+          "Month 1",
+          "Month 2",
+          "Month 3",
+          "Month 4",
+          "Month 5",
+          "Month 6",
+          "Month 7",
+          "Month 8",
+          "Month 9",
+        ];
+
+        // Function to update a specific task field
+        const handleTaskChange = (e, index) => {
+          const newTableContent = [...tableContent];
+          newTableContent[index] = e.target.value;
+          setTableContent(newTableContent);
+        };
+
+        return (
+          <div>
+            <table border="1px" cellPadding="10">
+              <thead>
+                <tr>
+                  {months.map((month, index) => (
+                    <th key={index}>{month}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {tableContent.map((el, index) => {
+                  return (
+                    <tr key={index}>
+                      <td>
+                        <input
+                          type="text"
+                          value={el}
+                          onChange={(e) => handleTaskChange(e, index)}
+                        />
+                      </td>
+                      {Array.from({ length: 9 }).map((_, idx) => (
+                        <td key={idx}></td>
+                      ))}
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        );
+      }
+
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+  </body>
+</html>
